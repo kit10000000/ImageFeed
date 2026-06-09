@@ -1,24 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dt4-ek-HRL">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="b4K-vk-nuD">
+            <objects>
+                <viewController id="dt4-ek-HRL" customClass="ProfileViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2PK-kp-RcH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfileStub" translatesAutoresizingMaskIntoConstraints="NO" id="Ot7-Tn-wtb">
+                                <rect key="frame" x="16" y="85" width="70" height="70"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Екатерина Новикова" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMc-QZ-MgJ" userLabel="NameLabel">
+                                <rect key="frame" x="16" y="163" width="234" height="28"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@ekaterina_nov" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McM-q2-hhr" userLabel="NickLabel">
+                                <rect key="frame" x="16" y="199" width="97" height="15.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, world!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irY-ny-6Mi" userLabel="Description">
+                                <rect key="frame" x="16" y="222.66666666666666" width="75.666666666666671" height="15.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjb-j3-IN6" userLabel="Logout">
+                                <rect key="frame" x="333" y="98" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="OlQ-i2-6lI"/>
+                                    <constraint firstAttribute="height" constant="44" id="bYt-eL-uVv"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Exit"/>
+                                <connections>
+                                    <action selector="didTapLogoutButton:" destination="dt4-ek-HRL" eventType="touchUpInside" id="pPz-M5-8OE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gsV-Ye-bgw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ot7-Tn-wtb" firstAttribute="top" secondItem="2PK-kp-RcH" secondAttribute="top" constant="85" id="12P-SK-mdA"/>
+                            <constraint firstItem="gsV-Ye-bgw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HMc-QZ-MgJ" secondAttribute="trailing" symbolic="YES" id="2RH-kU-8Ua"/>
+                            <constraint firstItem="Ot7-Tn-wtb" firstAttribute="leading" secondItem="gsV-Ye-bgw" secondAttribute="leading" constant="16" id="2qe-Zz-cMC"/>
+                            <constraint firstItem="McM-q2-hhr" firstAttribute="top" secondItem="HMc-QZ-MgJ" secondAttribute="bottom" constant="8" id="I43-Ik-3Wu"/>
+                            <constraint firstItem="HMc-QZ-MgJ" firstAttribute="leading" secondItem="gsV-Ye-bgw" secondAttribute="leading" constant="16" id="IPb-cx-Xye"/>
+                            <constraint firstItem="HMc-QZ-MgJ" firstAttribute="top" secondItem="Ot7-Tn-wtb" secondAttribute="bottom" constant="8" id="Q3g-Oc-hrm"/>
+                            <constraint firstItem="gsV-Ye-bgw" firstAttribute="bottom" secondItem="Mjb-j3-IN6" secondAttribute="bottom" constant="642" id="TNY-aE-dQS"/>
+                            <constraint firstItem="Mjb-j3-IN6" firstAttribute="top" secondItem="2PK-kp-RcH" secondAttribute="top" constant="98" id="VYM-eY-LfH"/>
+                            <constraint firstItem="irY-ny-6Mi" firstAttribute="leading" secondItem="gsV-Ye-bgw" secondAttribute="leading" constant="16" id="Z8S-ck-Xii"/>
+                            <constraint firstItem="gsV-Ye-bgw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="McM-q2-hhr" secondAttribute="trailing" symbolic="YES" id="ZVo-vj-gAp"/>
+                            <constraint firstItem="gsV-Ye-bgw" firstAttribute="trailing" secondItem="Mjb-j3-IN6" secondAttribute="trailing" constant="16" id="c4O-hD-Hsh"/>
+                            <constraint firstItem="irY-ny-6Mi" firstAttribute="top" secondItem="McM-q2-hhr" secondAttribute="bottom" constant="8" id="diO-Sz-1VI"/>
+                            <constraint firstItem="McM-q2-hhr" firstAttribute="leading" secondItem="gsV-Ye-bgw" secondAttribute="leading" constant="16" id="gD3-eJ-vpf"/>
+                            <constraint firstItem="gsV-Ye-bgw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="irY-ny-6Mi" secondAttribute="trailing" symbolic="YES" id="kMc-nR-EFt"/>
+                            <constraint firstItem="gsV-Ye-bgw" firstAttribute="bottom" secondItem="Ot7-Tn-wtb" secondAttribute="bottom" constant="629" id="nUy-Kc-zxQ"/>
+                            <constraint firstItem="Mjb-j3-IN6" firstAttribute="leading" secondItem="Ot7-Tn-wtb" secondAttribute="trailing" constant="247" id="vjt-AM-mkK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="irY-ny-6Mi" id="TCC-jU-0PU"/>
+                        <outlet property="nameLabel" destination="HMc-QZ-MgJ" id="sPl-tz-ArM"/>
+                        <outlet property="nickLabel" destination="McM-q2-hhr" id="kWO-VT-EZk"/>
+                        <outlet property="profileImage" destination="Ot7-Tn-wtb" id="gC2-de-2g3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lcA-Kr-YSm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-405.34351145038164" y="50"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="445" y="50"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Exit" width="44" height="44"/>
+        <image name="ProfileStub" width="70" height="70"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
