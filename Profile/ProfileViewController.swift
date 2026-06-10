@@ -4,16 +4,16 @@ final class ProfileViewController: UIViewController {
 
     // MARK: - Private Properties
 
-    private let profileImageView: UIImageView = {
+    private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "ProfilePic")
+        imageView.image = UIImage(resource: .profilePic)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 35
         imageView.clipsToBounds = true
         return imageView
     }()
 
-    private let nameLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Екатерина Новова"
         label.font = UIFont.systemFont(ofSize: 23, weight: .bold)
@@ -22,7 +22,7 @@ final class ProfileViewController: UIViewController {
         return label
     }()
 
-    private let usernameLabel: UILabel = {
+    private lazy var usernameLabel: UILabel = {
         let label = UILabel()
         label.text = "@ekaterina_nov"
         label.font = UIFont.systemFont(ofSize: 13)
@@ -31,7 +31,7 @@ final class ProfileViewController: UIViewController {
         return label
     }()
 
-    private let bioLabel: UILabel = {
+    private lazy var bioLabel: UILabel = {
         let label = UILabel()
         label.text = "Hello, World!"
         label.font = UIFont.systemFont(ofSize: 13)
@@ -40,9 +40,9 @@ final class ProfileViewController: UIViewController {
         return label
     }()
 
-    private let logoutButton: UIButton = {
+    private lazy var logoutButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "Exit"), for: .normal)
+        button.setImage(UIImage(resource: .exit), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -58,7 +58,7 @@ final class ProfileViewController: UIViewController {
     // MARK: - Private Methods
 
     private func setupUI() {
-        view.backgroundColor = UIColor(named: "YP Black")
+        view.backgroundColor = UIColor(resource: .ypBlack)
         view.addSubview(profileImageView)
         view.addSubview(nameLabel)
         view.addSubview(usernameLabel)
