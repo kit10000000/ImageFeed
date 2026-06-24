@@ -75,3 +75,15 @@ final class SingleImageViewController: UIViewController {
         centerImageInScrollView()
     }
 }
+
+// MARK: - UIScrollViewDelegate
+
+extension SingleImageViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        imageView
+    }
+
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        centerImageInScrollView()
+    }
+}

@@ -13,12 +13,16 @@
         <scene sceneID="Cuv-8o-b8d">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarViewController" id="jkD-Fo-JTf" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PS5-ot-kch">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="PS5-ot-kch">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="YP Black"/>
-                        <color key="tintColor" name="YP White"/>
                         <color key="selectedImageTintColor" name="YP White"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" name="YP Black"/>
+                        </tabBarAppearance>
+                        <tabBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" name="YP Black"/>
+                        </tabBarAppearance>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="59H-nR-Lm7"/>
@@ -218,14 +222,14 @@
             <objects>
                 <viewController id="vKV-bE-qha" userLabel="Auth View Controller" customClass="AuthViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UHa-Ae-jEa">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="chR-HG-Rvd">
-                                <rect key="frame" x="166.66666666666666" y="366.66666666666669" width="60" height="60"/>
+                                <rect key="frame" x="166.66666666666666" y="396" width="60" height="60"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W4R-ta-IZb" userLabel="LoginButton">
-                                <rect key="frame" x="52.666666666666657" y="635" width="288" height="44"/>
+                                <rect key="frame" x="52.666666666666657" y="660" width="288" height="44"/>
                                 <color key="backgroundColor" name="YP White"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="2eY-wJ-Sph"/>
@@ -248,7 +252,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Войти" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAq-Qb-pW8">
-                                <rect key="frame" x="170.66666666666666" y="647.66666666666663" width="51.666666666666657" height="20.333333333333371"/>
+                                <rect key="frame" x="170.66666666666666" y="672.66666666666663" width="51.666666666666657" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" name="YP Black"/>
                                 <nil key="highlightedColor"/>
@@ -278,7 +282,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="f5A-lW-ZtQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z9v-pb-Iaj">
-                        <rect key="frame" x="0.0" y="16" width="393" height="54"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -295,11 +299,11 @@
             <objects>
                 <viewController id="Dwy-H3-xLY" userLabel="WebView View Controller" customClass="WebViewViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oBr-tE-cK1">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpK-tG-qar">
-                                <rect key="frame" x="0.0" y="70" width="393" height="723"/>
+                                <rect key="frame" x="0.0" y="113" width="393" height="739"/>
                                 <color key="backgroundColor" name="YP White"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -344,7 +348,7 @@
                         <color key="backgroundColor" name="YP Black"/>
                     </view>
                     <connections>
-                        <segue destination="c9g-BB-UKd" kind="presentation" modalPresentationStyle="fullScreen" identifier="showAuthenticationScreen" id="7fv-Rr-s0G"/>
+                        <segue destination="c9g-BB-UKd" kind="presentation" identifier="showAuthenticationScreen" modalPresentationStyle="fullScreen" id="7fv-Rr-s0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hg-Mv-DFP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
