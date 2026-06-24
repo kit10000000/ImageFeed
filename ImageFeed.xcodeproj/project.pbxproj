@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7800A3DF2FE2A41700E69A9E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7800A3DE2FE2A41700E69A9E /* WebKit.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		78D777ED2FC46DE700C3521E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7800A3DE2FE2A41700E69A9E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		78D777D62FC46DE600C3521E /* ImageFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D777EC2FC46DE700C3521E /* ImageFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D777F62FC46DE700C3521E /* ImageFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +45,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		7800A3AC2FE2992A00E69A9E /* Auth */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		787287642FD8352500824DCE /* SingleImage */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SingleImage;
@@ -58,6 +68,26 @@
 		7896D18B2FCF48BA004F7B21 /* ImagesList */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ImagesList;
+			sourceTree = "<group>";
+		};
+		78B7DC6F2FEADCD0009802B7 /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		78B7DC742FEAE6DB009802B7 /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		78B7DC822FEBC985009802B7 /* SplashViewController */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SplashViewController;
+			sourceTree = "<group>";
+		};
+		78BC3CD72FDC065C00A5E327 /* Helpers */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		78D777D82FC46DE600C3521E /* ImageFeed */ = {
@@ -85,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7800A3DF2FE2A41700E69A9E /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,9 +136,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7800A3DD2FE2A41700E69A9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7800A3DE2FE2A41700E69A9E /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		78D777CD2FC46DE600C3521E = {
 			isa = PBXGroup;
 			children = (
+				78B7DC822FEBC985009802B7 /* SplashViewController */,
+				78B7DC742FEAE6DB009802B7 /* Models */,
+				78B7DC6F2FEADCD0009802B7 /* Services */,
+				7800A3AC2FE2992A00E69A9E /* Auth */,
+				78BC3CD72FDC065C00A5E327 /* Helpers */,
 				787287692FD8790D00824DCE /* Profile */,
 				787287642FD8352500824DCE /* SingleImage */,
 				7896D18B2FCF48BA004F7B21 /* ImagesList */,
@@ -115,6 +159,7 @@
 				78D777D82FC46DE600C3521E /* ImageFeed */,
 				78D777EF2FC46DE700C3521E /* ImageFeedTests */,
 				78D777F92FC46DE700C3521E /* ImageFeedUITests */,
+				7800A3DD2FE2A41700E69A9E /* Frameworks */,
 				78D777D72FC46DE600C3521E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -145,10 +190,15 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				7800A3AC2FE2992A00E69A9E /* Auth */,
 				787287642FD8352500824DCE /* SingleImage */,
 				787287692FD8790D00824DCE /* Profile */,
 				7896D1802FCF4522004F7B21 /* Extensions */,
 				7896D18B2FCF48BA004F7B21 /* ImagesList */,
+				78B7DC6F2FEADCD0009802B7 /* Services */,
+				78B7DC742FEAE6DB009802B7 /* Models */,
+				78B7DC822FEBC985009802B7 /* SplashViewController */,
+				78BC3CD72FDC065C00A5E327 /* Helpers */,
 				78D777D82FC46DE600C3521E /* ImageFeed */,
 			);
 			name = ImageFeed;
