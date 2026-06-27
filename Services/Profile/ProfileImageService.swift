@@ -44,6 +44,11 @@ final class ProfileImageService {
                 let userResult = data.profileImage
                 self.avatarURL = userResult.large
                 completion(.success(userResult.large))
+                NotificationCenter.default
+                    .post(
+                        name: ProfileImageService.didChangeNotification,
+                        object: self,
+                        userInfo: ["URL": self.avatarURL ?? ""])
             case .failure(let error):
                 print("[ProfileImageService]: \(error.localizedDescription)")
                 completion(.failure(error))
