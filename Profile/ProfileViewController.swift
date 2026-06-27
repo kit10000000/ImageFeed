@@ -1,8 +1,11 @@
 import UIKit
+import Kingfisher
 
 final class ProfileViewController: UIViewController {
 
     // MARK: - Private Properties
+
+    private var profileImageServiceObserver: NSObjectProtocol?
 
     private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -53,9 +56,30 @@ final class ProfileViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupConstraints()
+        loadProfileData()
+        setupProfileImageObserver()
+        updateAvatar()
     }
 
     // MARK: - Private Methods
+
+    private func loadProfileData() {
+        if let profile = ProfileService.shared.profile {
+            updateProfileDetails(profile: profile)
+        }
+    }
+
+    private func setupProfileImageObserver() {
+        profileImageServiceObserver = NotificationCenter.default
+            .addObserver(
+                forName: ProfileImageService.didChangeNotification,
+                object: nil,
+                queue: .main
+            ) { [weak self] _ in
+                guard let self = self else { return }
+                self.updateAvatar()
+            }
+    }
 
     private func setupUI() {
         view.backgroundColor = UIColor(resource: .ypBlack)
@@ -64,6 +88,12 @@ final class ProfileViewController: UIViewController {
         view.addSubview(usernameLabel)
         view.addSubview(bioLabel)
         view.addSubview(logoutButton)
+    }
+
+    private func updateProfileDetails(profile: Profile) {
+        nameLabel.text = profile.name
+        usernameLabel.text = profile.loginName
+        bioLabel.text = profile.bio
     }
 
     private func setupConstraints() {
@@ -87,5 +117,24 @@ final class ProfileViewController: UIViewController {
             logoutButton.widthAnchor.constraint(equalToConstant: 44),
             logoutButton.heightAnchor.constraint(equalToConstant: 44),
         ])
+    }
+
+    private func updateAvatar() {
+        guard
+            let profileImageURL = ProfileImageService.shared.avatarURL,
+            let url = URL(string: profileImageURL)
+        else { return }
+        profileImageView.kf.setImage(
+            with: url,
+            placeholder: UIImage(resource: .profileStub),
+            options: [.scaleFactor(UIScreen.main.scale)]
+        ) { result in
+            switch result {
+            case .success:
+                print("Аватар успешно загружен")
+            case .failure(let error):
+                print("Во время загрузки аватара произошла ошибка: \(error)")
+            }
+        }
     }
 }
