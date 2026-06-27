@@ -58,9 +58,11 @@ final class OAuth2Service {
             completion(.failure(NetworkError.invalidRequest))
             return
         }
-
-        let task = urlSession.objectTask(for: request) { [weak self] (result: Result<OAuthTokenResponseBody, Error>) in
+        
+        var task: URLSessionTask?
+        task = urlSession.objectTask(for: request) { [weak self] (result: Result<OAuthTokenResponseBody, Error>) in
             guard let self = self else { return }
+            guard self.task === task else { return }
             self.task = nil
             self.lastCode = nil
             switch result {
@@ -73,7 +75,8 @@ final class OAuth2Service {
                 completion(.failure(error))
             }
         }
-
+        
+        guard let task else { return }
         self.task = task
         task.resume()
     }

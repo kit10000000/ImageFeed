@@ -54,7 +54,6 @@ final class SplashViewController: UIViewController {
         let navigationController = UINavigationController(rootViewController: authViewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
-
     }
 
     private func setupUI() {
