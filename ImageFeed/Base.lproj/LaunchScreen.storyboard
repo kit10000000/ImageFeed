@@ -16,15 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector" translatesAutoresizingMaskIntoConstraints="NO" id="WfW-JA-MJj">
-                                <rect key="frame" x="169.5" y="423" width="75" height="78"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_screen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="aCk-cz-yLC">
+                                <rect key="frame" x="170" y="409.5" width="74" height="77"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black"/>
                         <constraints>
-                            <constraint firstItem="WfW-JA-MJj" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Ebf-gk-Jos"/>
-                            <constraint firstItem="WfW-JA-MJj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MRH-d7-42g"/>
+                            <constraint firstItem="aCk-cz-yLC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="UQY-56-Uf1"/>
+                            <constraint firstItem="aCk-cz-yLC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="amL-zV-BAt"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -34,7 +34,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Vector" width="75" height="78"/>
+        <image name="splash_screen_logo" width="74" height="77"/>
         <namedColor name="YP Black">
             <color red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
