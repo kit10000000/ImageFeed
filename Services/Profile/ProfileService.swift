@@ -30,12 +30,16 @@ final class ProfileService {
             completion(.failure(AuthServiceError.invalidRequest))
             return
         }
-
-        let task = urlSession.objectTask(for: request) { [weak self] (result: Result<ProfileResult, Error>) in
+        
+        var task: URLSessionTask?
+        task = urlSession.objectTask(for: request) { [weak self] (result: Result<ProfileResult, Error>) in
+            
             guard let self else {
                 completion(.failure(AuthServiceError.invalidRequest))
                 return
             }
+            guard self.task === task else { return }
+            
             switch result {
             case .success(let data):
                 let profile = Profile(result: data)
@@ -47,6 +51,8 @@ final class ProfileService {
             }
             self.task = nil
         }
+        
+        guard let task else { return }
         self.task = task
         task.resume()
     }

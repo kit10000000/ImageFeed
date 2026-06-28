@@ -15,7 +15,12 @@ final class SplashViewController: UIViewController {
     }()
 
     // MARK: - Lifecycle
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        setupConstraints()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupUI()

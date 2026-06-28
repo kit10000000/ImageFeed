@@ -36,9 +36,11 @@ final class ProfileImageService {
             completion(.failure(URLError(.badURL)))
             return
         }
-
-        let task = urlSession.objectTask(for: request) { [weak self] (result: Result<UserResult, Error>) in
+        
+        var task: URLSessionTask?
+        task = urlSession.objectTask(for: request) { [weak self] (result: Result<UserResult, Error>) in
             guard let self = self else { return }
+            guard self.task === task else { return }
             switch result {
             case .success(let data):
                 let userResult = data.profileImage
@@ -54,7 +56,8 @@ final class ProfileImageService {
                 completion(.failure(error))
             }
         }
-
+        
+        guard let task else { return }
         self.task = task
         task.resume()
     }
